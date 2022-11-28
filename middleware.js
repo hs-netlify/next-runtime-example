@@ -57,6 +57,7 @@ export const middleware = async (nextRequest) => {
 
   // customPricing.foreach((item) => {
   if (pathname.startsWith(`/use-case/marketing`)) {
+    let item = customPricing["marketing"];
     response.setPageProps("pricing", item.pricing);
 
     for (let i = 0; i < item.pricing.length; i++) {
