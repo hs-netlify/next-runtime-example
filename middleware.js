@@ -35,10 +35,6 @@ export const middleware = async (nextRequest) => {
 
   const response = await middlewareRequest.next();
 
-  return new NextResponse(
-    JSON.stringify({ success: false, message: "authentication failed" }),
-    { status: 401, headers: { "content-type": "application/json" } }
-  );
   // const hasCookieConsent = request.cookies.get("cookieConsentGiven");
   // if (hasCookieConsent) {
   //   response.setPageProp("cookieConsentGiven", true);
@@ -60,18 +56,18 @@ export const middleware = async (nextRequest) => {
     return response;
   }
 
-  customPricing.foreach((item) => {
-    if (pathname.startsWith(`/use-case/${item.name}`)) {
-      response.setPageProps("pricing", item.pricing);
+  // customPricing.foreach((item) => {
+  //   if (pathname.startsWith(`/use-case/${item.name}`)) {
+  //     response.setPageProps("pricing", item.pricing);
 
-      for (let i = 0; i < item.pricing.length; i++) {
-        response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
-        response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
-      }
+  //     for (let i = 0; i < item.pricing.length; i++) {
+  //       response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
+  //       response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
+  //     }
 
-      return response;
-    }
-  });
+  //     return response;
+  //   }
+  // });
 
   if (pathname.startsWith("/marketing")) {
     return response;
