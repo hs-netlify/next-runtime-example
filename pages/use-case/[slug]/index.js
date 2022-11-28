@@ -3,9 +3,23 @@ import { useRouter } from "next/router";
 import Pricing from "../../../components/pricing";
 import NavBar from "../../../components/navBar";
 export const getStaticProps = async () => {
+  let defaultPricing = [
+    {
+      name: "Hobby",
+      price: 79,
+    },
+    {
+      name: "Growth",
+      price: 149,
+    },
+    {
+      name: "Scale",
+      price: 349,
+    },
+  ];
   return {
     props: {
-      pricing: null,
+      pricing: defaultPricing,
     },
   };
 };

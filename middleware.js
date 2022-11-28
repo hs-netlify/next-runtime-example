@@ -1,5 +1,4 @@
 import { MiddlewareRequest } from "@netlify/next";
-import { NextResponse } from "next/server";
 
 let customPricing = [
   {
@@ -45,40 +44,24 @@ export const middleware = async (nextRequest) => {
   //   });
 
   if (pathname.startsWith("/static")) {
-    const message = `This was a static page but has been transformed in
-           using
-                     @netlify/next in middleware.ts!`;
-
+    const message = `This was a static page but has been transformed in using @netlify/next in middleware.ts!`;
     response.replaceText("#message", message);
     response.setPageProp("message", message);
 
     return response;
   }
 
-  // customPricing.foreach((item) => {
-  if (pathname.startsWith(`/use-case/marketing`)) {
-    let item = customPricing["marketing"];
-    response.setPageProps("pricing", item.pricing);
+  customPricing.forEach((item) => {
+    if (pathname.startsWith(`/use-case/${item.name}`)) {
+      console.log(item);
+      response.setPageProp("pricing", item.pricing);
 
-    for (let i = 0; i < item.pricing.length; i++) {
-      response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
-      response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
+      for (let i = 0; i < item.pricing.length; i++) {
+        response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
+        response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
+      }
+
+      return response;
     }
-
-    return response;
-  }
-  // });
-
-  if (pathname.startsWith("/marketing")) {
-    return response;
-  }
-
-  if (pathname.startsWith("/shop")) {
-    return response;
-  }
-
-  if (pathname.startsWith("/app")) {
-    return response;
-  }
-  // }
+  });
 };
