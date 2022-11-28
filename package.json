@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "@netlify/next": "^1.4.1",
     "next": "13.0.0",
     "react": "18.2.0",
