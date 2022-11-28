@@ -7,6 +7,7 @@ export async function getStaticProps() {
 }
 
 const Page = ({ message }) => {
+  console.log(message);
   return (
     <main>
       <h1 id="message">{message}</h1>

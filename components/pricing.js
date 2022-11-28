@@ -19,39 +19,7 @@ const plan3Features = [
   "Vel ipsa esse repudiandae",
 ];
 
-const defaultPricing = [
-  {
-    name: "Hobby",
-    price: 79,
-    features: [
-      "Pariatur quod similique",
-      "Sapiente libero doloribus",
-      "Vel ipsa esse repudiandae",
-    ],
-  },
-  {
-    name: "Growth",
-    price: 149,
-    features: [
-      "Quia rem est sed impedit magnam",
-      "Dolorem vero ratione voluptates",
-      "Qui sed ab doloribus voluptatem dolore",
-      "Laborum commodi molestiae id et fugiat",
-      "Nam ut ipsa nesciunt culpa modi dolor",
-    ],
-  },
-  {
-    name: "Scale",
-    price: 349,
-    features: [
-      "Pariatur quod similique",
-      "Sapiente libero doloribus",
-      "Vel ipsa esse repudiandae",
-    ],
-  },
-];
-
-export default function Pricing({ pricing = defaultPricing, heroText }) {
+export default function Pricing({ pricing, heroText }) {
   return (
     <div className="bg-gray-900">
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
@@ -59,7 +27,10 @@ export default function Pricing({ pricing = defaultPricing, heroText }) {
           <h2 className="text-xl font-semibold leading-6 text-gray-300">
             Pricing
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <p
+            id="hero-text"
+            className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
             {heroText ? heroText : " The right price for you, whoever you are"}
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-xl text-gray-300 sm:mt-5 sm:text-2xl">
