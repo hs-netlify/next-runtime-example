@@ -46,8 +46,7 @@ export const middleware = async (nextRequest) => {
 
   if (pathname.startsWith("/static")) {
     const message = `This was a static page but has been transformed in
-                     ${nextRequest?.geo?.city},
-                     ${nextRequest?.geo?.country} using
+           using
                      @netlify/next in middleware.ts!`;
 
     response.replaceText("#message", message);
@@ -57,16 +56,16 @@ export const middleware = async (nextRequest) => {
   }
 
   // customPricing.foreach((item) => {
-  //   if (pathname.startsWith(`/use-case/${item.name}`)) {
-  //     response.setPageProps("pricing", item.pricing);
+  if (pathname.startsWith(`/use-case/marketing`)) {
+    response.setPageProps("pricing", item.pricing);
 
-  //     for (let i = 0; i < item.pricing.length; i++) {
-  //       response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
-  //       response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
-  //     }
+    for (let i = 0; i < item.pricing.length; i++) {
+      response.replaceText(`#sku${i + 1}-name`, item.pricing[i].name);
+      response.replaceText(`#sku${i + 1}-price`, item.pricing[i].price);
+    }
 
-  //     return response;
-  //   }
+    return response;
+  }
   // });
 
   if (pathname.startsWith("/marketing")) {
