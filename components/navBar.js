@@ -110,6 +110,11 @@ export default function NavBar() {
                       Blog
                     </a>
                   </Link>
+                  <Link href="/store">
+                    <a className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">
+                      Store
+                    </a>
+                  </Link>
                 </div>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center">

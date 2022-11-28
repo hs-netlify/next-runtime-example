@@ -1,4 +1,6 @@
+import { CubeTransparentIcon } from "@heroicons/react/24/outline";
 import { MiddlewareRequest } from "@netlify/next";
+// import cities from "./data/cities.json";
 
 let customPricing = [
   {
@@ -48,9 +50,12 @@ export const middleware = async (nextRequest) => {
   //   });
 
   if (pathname.startsWith("/static")) {
-    const message = `This was a static page but has been transformed in using @netlify/next in middleware.ts!`;
+    const message = `This was a static page but has been transformed in 
+                     ${nextRequest?.geo?.city}, 
+                     ${nextRequest?.geo?.country} using 
+                     @netlify/next in middleware.ts!`;
     response.replaceText("#message", message);
-    response.setPageProp("message", customPricing);
+    response.setPageProp("message", message);
 
     return response;
   }
@@ -81,6 +86,49 @@ export const middleware = async (nextRequest) => {
     if (searchText) {
       response.setPageProp("title", searchText);
       response.replaceText("#title", searchText);
+      return response;
+    }
+  }
+
+  if (pathname.startsWith("/store")) {
+    const cityParam = middlewareRequest.nextUrl.searchParams.get("city");
+    let city;
+    if (cityParam) {
+      city = cityParam;
+    } else if (nextRequest.geo) {
+      city = nextRequest.geo.city;
+    }
+
+    console.log(city);
+
+    if (city) {
+      const res = await fetch(
+        `https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`,
+        {
+          headers: {
+            "X-RapidAPI-Key":
+              "a9cc9ec26bmsh63a61406bf323dcp1d9f0bjsn91a15a8371bf",
+            "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+          },
+        }
+      );
+      const data = await res.json();
+
+      let title;
+
+      if (data.current.temp_c) {
+        if (data.current.temp_c > 15) {
+          title = `Its ${data.current.temp_c} degrees celcius in ${city}, hopefully these will keep you cool!`;
+
+          response.setPageProp("temp", "hot");
+        } else {
+          title = `Its only ${data.current.temp_c} degrees celcius in ${city} you better wrap up warm!`;
+          response.setPageProp("temp", "cold");
+        }
+        response.setPageProp("listTitle", title);
+        response.replaceText("#list-title", title);
+      }
+
       return response;
     }
   }

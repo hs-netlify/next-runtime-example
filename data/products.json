@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    "price": 34,
+    "color": "Black",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "hot",
+    "name": "Black Tee"
+  },
+  {
+    "id": 2,
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
+    "price": 53,
+    "color": "White",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "hot",
+    "name": "White Tee"
+  },
+  {
+    "id": 3,
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg",
+    "price": 35,
+    "color": "Grey",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "hot",
+    "name": "Grey Tee"
+  },
+  {
+    "id": 4,
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+    "price": 37,
+    "color": "Pink",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "hot",
+    "name": "Pink Tee"
+  },
+  {
+    "id": 5,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT9MP9z5zLSMNkG-_afUmBOXvt-nltXoq3LILmlj0-l1_IrtzormViTiI3n3kg0jrHwM5fNEpLCQ6lieraU8yq50FrXSwvMzaMqDGt7Q_tSdJ0or7l4O5KythNQ3VQ&usqp=CAE",
+    "price": 190,
+    "color": "Black",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "cold",
+    "name": "Green/Grey Ski Jacket"
+  },
+  {
+    "id": 6,
+    "imageSrc": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTaAh39FCDTXacD19lrlKJJ5Nb9a5N7YBk5DDCGpqpEacx_3hj9MkzQB1N7wld9Xi9m0WtUH4eU5GIHl-IufNsjYbfmjUvBWzf9Xk8yU0DPKn_yaZnCh8JHbb15C3oj&usqp=CAE",
+    "price": 250,
+    "color": "Black",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "cold",
+    "name": "Brown Ski Jacket"
+  },
+  {
+    "id": 7,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRXSGVwfZtjw5Sg_NdUqTewNVa3BABw-cKNR060PB0fLp1ErnOheKNp_yxZ8INKXYxl8UepBwCMmNIIVZ71kam5lg9VIB2OwdYQfdMN2ruK61-M-2ml4fDSp8JNEpQ&usqp=CAE",
+    "price": 110,
+    "color": "Black",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "cold",
+    "name": "Purple Ski Jacket"
+  },
+  {
+    "id": 8,
+    "imageSrc": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTT2BaAdQV2M6B2vHLbkKKwFUrhRs27cVw1WSVcmEBtJOrixJZVUYTL0McK5wMWk9NN139uNnQmKt61oQJTN1SFlt4sJgkOc2PLKI0mfUuKaPtcogJbLvEDyCpdjEU&usqp=CAE",
+    "price": 180,
+    "color": "Black",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "temp": "cold",
+    "name": "Red Ski suit"
+  }
+]
