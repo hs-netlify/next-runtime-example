@@ -23,7 +23,6 @@ export const getStaticPaths = () => {
 };
 
 const BlogPage = ({ post, title }) => {
-  console.log("title", title);
   return (
     <div>
       <NavBar />

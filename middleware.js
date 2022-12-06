@@ -1,4 +1,3 @@
-import { CubeTransparentIcon } from "@heroicons/react/24/outline";
 import { MiddlewareRequest } from "@netlify/next";
 // import cities from "./data/cities.json";
 
@@ -98,8 +97,6 @@ export const middleware = async (nextRequest) => {
     } else if (nextRequest.geo) {
       city = nextRequest.geo.city;
     }
-
-    console.log(city);
 
     if (city) {
       const res = await fetch(
