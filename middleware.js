@@ -3,12 +3,28 @@ import customPricing from "./data/customPricing.json";
 import { getParamByISO } from "iso-country-currency";
 import posts from "./data/posts.json";
 
+const COOKIE_NAME = "ab-test";
+
+// Choose a random bucket
+// Optional: contact a 3rd party service to get the user's bucket
+
 export const middleware = async (nextRequest) => {
+  const MARKETING_BUCKETS = ["a", "b"];
+  const getBucket = () =>
+    MARKETING_BUCKETS[Math.floor(Math.random() * MARKETING_BUCKETS.length)];
   const pathname = nextRequest.nextUrl.pathname;
 
   const middlewareRequest = new MiddlewareRequest(nextRequest);
 
   const response = await middlewareRequest.next();
+
+  //AB Test cookie setup
+  const bucket = nextRequest.cookies.get(COOKIE_NAME) || getBucket();
+
+  // Add the bucket to cookies if it's not there
+  if (!nextRequest.cookies.get(COOKIE_NAME)) {
+    response.cookies.set(COOKIE_NAME, bucket);
+  }
 
   // const hasCookieConsent = request.cookies.get("cookieConsentGiven");
   // if (hasCookieConsent) {
@@ -18,6 +34,19 @@ export const middleware = async (nextRequest) => {
   //       e.remove();
   //     },
   //   });
+
+  //Change background colour on homepage based of A/B
+
+  if (pathname == "/") {
+    if (bucket === "b") {
+      response.rewriteHTML("#main-body", {
+        element(element) {
+          element.setAttribute("style", "background-color:black; color:white");
+        },
+      });
+    }
+    return response;
+  }
 
   if (pathname.startsWith("/static")) {
     const message = `This was a static page but has been transformed in 
