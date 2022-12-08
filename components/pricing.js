@@ -1,5 +1,5 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const plan1Features = [
   "Pariatur quod similique",
@@ -23,6 +23,12 @@ const plan3Features = [
 export default function Pricing({ pricing, heroText }) {
   const [highlight, setHighlight] = useState(false);
 
+  // const [customerId, setCustomerId] = useState(1);
+  // useEffect(() => {
+  //   let randNum = Math.ceil(Math.random() * 5);
+  //   setCustomerId(randNum);
+  // });
+
   const toggleHighlight = () => {
     highlight ? setHighlight(false) : setHighlight(true);
   };
@@ -34,26 +40,33 @@ export default function Pricing({ pricing, heroText }) {
   return (
     <div className="bg-gray-900 relative">
       <div className={showHighlight}>
-        <div className="bg-white fixed bottom-24 m-auto  rounded p-4">
-          Editing the hero text and pricing plans of a static page based on user
-          infomation through edge functions{" "}
+        <div className="bg-white max-w-[800px] w-1/2 text-center fixed bottom-24 m-auto  rounded p-4">
+          Editing the hero text and pricing plans of a static page based on
+          custom user id. When linked to a CRM links can be sent to customers
+          providing their own bespoke pricing through edge functions
         </div>
       </div>
       {highlight ? (
         <button
-          className="fixed bottom-10 w-48 z-50 bg-blue-500 rounded text-white  p-2 text-large cursor-pointer left-10"
+          className="fixed bottom-24 w-48 z-50 bg-indigo-600 hover:bg-indigo-700  rounded text-white  p-2 text-large cursor-pointer left-10"
           onClick={toggleHighlight}
         >
-          Hide Transform
+          Hide Customisation
         </button>
       ) : (
         <button
-          className="fixed bottom-10 w-48 z-50 bg-blue-500 rounded text-white  p-2 text-large cursor-pointer left-10"
+          className="fixed bottom-24 w-48 z-50 bg-indigo-600 hover:bg-indigo-700  rounded text-white  p-2 text-large cursor-pointer left-10"
           onClick={toggleHighlight}
         >
-          Show Transfrom
+          Show Customisation
         </button>
       )}
+      <a
+        href={`/pricing?id=${1}`}
+        className="fixed text-center bottom-10 w-48 z-50 bg-indigo-600 hover:bg-indigo-700 rounded text-white  p-2 text-large cursor-pointer left-10"
+      >
+        Random Customer
+      </a>
 
       <div className="px-4 pt-24 sm:px-6 lg:px-8 lg:pt-24">
         <div className="text-center">

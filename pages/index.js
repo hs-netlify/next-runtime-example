@@ -1,11 +1,12 @@
 import NavBar from "../components/navBar";
 
 export default function Home() {
+  let randNumber = Math.ceil(Math.random() * 5);
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-min-screen overflow-hidden">
       <NavBar />
       <main className="lg:relative h-full">
-        <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+        <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-32 lg:text-left">
           <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
               <span className="block xl:inline">
@@ -13,27 +14,76 @@ export default function Home() {
               </span>
               <br />
               <span className="block text-indigo-600 xl:inline">
-                Next.js Advanced Middleware!!
+                Next.js Advanced Middleware
               </span>
             </h1>
-            <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-            <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-              <div className="rounded-md shadow">
-                <a
-                  href="#"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
-                >
-                  Get started
-                </a>
+            <p className="mx-auto mt-20 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <span className="font-bold text-gray-900">Example 1:</span> Create
+              a custom pricing page on the fly by providing a unique link to
+              each customer.
+              <br />
+              <div className="flex mt-4">
+                <div className="rounded-md shadow">
+                  <a
+                    className="flex w-48 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-1 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                    href={`/pricing?id=${randNumber}`}
+                  >
+                    Try it out
+                  </a>
+                </div>
               </div>
-              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+            </p>
+            <p className="mx-auto mt-20 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <span className="font-bold text-gray-900">Example 2:</span> Change
+              the products in your store based on the weather of the location of
+              the request.
+              <br />
+              <div className="flex mt-4">
+                <div className="rounded-md shadow">
+                  <a
+                    className="flex  w-48 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-1 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                    href={`/store`}
+                  >
+                    Try it out
+                  </a>
+                </div>
+              </div>
+            </p>
+            <p className="mx-auto mt-20 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <span className="font-bold text-gray-900">Example 3:</span> Track
+              the most viewed blogs and inject them into the page.
+              <br />
+              <div className="flex mt-4">
+                <div className="rounded-md shadow">
+                  <a
+                    className="flex w-48 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-1 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                    href={`/blog`}
+                  >
+                    Try it out
+                  </a>
+                </div>
+              </div>
+            </p>
+            <p className="mx-auto mt-20 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <span className="font-bold text-gray-900">Example 4:</span> Custom
+              content in a blog based on your search match.
+              <br />
+              <div className="flex mt-4">
+                <div className="rounded-md shadow">
+                  <a
+                    className="flex w-48 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-1 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                    href={`/search`}
+                  >
+                    Try it out
+                  </a>
+                </div>
+              </div>
+            </p>
+            <div className="mt-10 sm:flex sm:justify-center ">
+              <div className="mt-3 rounded-md shadow sm:mt-0">
                 <a
-                  href="#"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50 md:py-4 md:px-10 md:text-lg"
+                  href="https://www.netlify.com/enterprise/contact/"
+                  className="flex w-full items-center justify-center w-48 rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50 md:py-4 md:px-10 md:text-lg"
                 >
                   Live demo
                 </a>

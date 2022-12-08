@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "e-commerce",
+    "pricing": [
+      { "name": "Personal Store", "price": 500 },
+      { "name": "Business Store", "price": 2000 },
+      { "name": "Enterprise Store", "price": 5000 }
+    ],
+    "heroText": "Awesome plans to suit any size store."
+  },
+  {
+    "id": 2,
+    "name": "web-app",
+    "pricing": [
+      { "name": "Growth", "price": 100 },
+      { "name": "Business", "price": 3000 },
+      { "name": "Enterprise", "price": 6000 }
+    ],
+    "heroText": "Run your web app at scale, priced to suit your needs."
+  },
+  {
+    "id": 3,
+    "name": "marketing",
+    "pricing": [
+      { "name": "Pro", "price": 100 },
+      { "name": "Scale", "price": 1000 },
+      { "name": "Business", "price": 3000 }
+    ],
+    "heroText": "Lightening fast speeds and the best price for your Marketing Site"
+  },
+  {
+    "id": 4,
+    "name": "CPG",
+    "pricing": [
+      { "name": "SME Brands", "price": 1000 },
+      { "name": "Mid Market Brands", "price": 2500 },
+      { "name": "Enterpise Brands", "price": 5000 }
+    ],
+    "heroText": "Empower your CPG Brands to build engaging experiences"
+  },
+  {
+    "id": 5,
+    "name": "finTech",
+    "pricing": [
+      { "name": "Local", "price": 1000 },
+      { "name": "Regional", "price": 5000 },
+      { "name": "Global", "price": 8000 }
+    ],
+    "heroText": "Power your financial services applications reliably at the Edge"
+  }
+]

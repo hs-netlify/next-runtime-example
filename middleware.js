@@ -1,36 +1,7 @@
 import { MiddlewareRequest } from "@netlify/next";
-// import cities from "./data/cities.json";
-
-let customPricing = [
-  {
-    name: "e-commerce",
-    pricing: [
-      { name: "Personal Store", price: 500 },
-      { name: "Business Store", price: 2000 },
-      { name: "Enterprise Store", price: 5000 },
-    ],
-    heroText: "Awesome plans to suit any size store.",
-  },
-  {
-    name: "web-app",
-    pricing: [
-      { name: "Growth", price: 100 },
-      { name: "Business", price: 3000 },
-      { name: "Enterprise", price: 6000 },
-    ],
-    heroText: "Run your web app at scale, priced to suit your needs.",
-  },
-  {
-    name: "marketing",
-    pricing: [
-      { name: "Pro", price: 100 },
-      { name: "Scale", price: 1000 },
-      { name: "Business", price: 3000 },
-    ],
-    heroText:
-      "Lightening fast speeds and the best price for your Marketing Site",
-  },
-];
+import customPricing from "./data/customPricing.json";
+import { getParamByISO } from "iso-country-currency";
+import posts from "./data/posts.json";
 
 export const middleware = async (nextRequest) => {
   const pathname = nextRequest.nextUrl.pathname;
@@ -59,21 +30,29 @@ export const middleware = async (nextRequest) => {
     return response;
   }
 
-  for (let item of customPricing) {
-    if (pathname.startsWith(`/use-case/${item.name}`)) {
+  if (pathname.startsWith(`/pricing`)) {
+    const customerId = middlewareRequest.nextUrl.searchParams.get("id");
+    const currencyOverride =
+      middlewareRequest.nextUrl.searchParams.get("country");
+    let item = customPricing.find((price) => price.id == customerId);
+    let country = currencyOverride ? currencyOverride : nextRequest.geo.country;
+    let currency = getParamByISO(country, "symbol");
+
+    if (item) {
       for (let i = 0; i < item.pricing.length; i++) {
         response.replaceText(
           `#sku${i + 1}-name`,
           item.pricing[i].name.toString()
         );
         response.replaceText(
-          `#sku${i + 1}-price`,
+          `sku${i + 1}-price`,
           item.pricing[i].price.toString()
         );
       }
       response.setPageProp("heroText", item.heroText);
       response.replaceText("#hero-text", item.heroText);
-
+      response.setPageProp("currency", currency);
+      response.replaceText("#currency", currency);
       response.setPageProp("pricing", item.pricing);
 
       return response;
@@ -85,6 +64,21 @@ export const middleware = async (nextRequest) => {
     if (searchText) {
       response.setPageProp("title", searchText);
       response.replaceText("#title", searchText);
+      return response;
+    }
+  }
+
+  if (pathname.startsWith("/blog")) {
+    const cookie = nextRequest.cookies.get("mostViewed");
+
+    let mostViewed = JSON.parse(cookie ? cookie : null);
+
+    if (mostViewed) {
+      let mostViewedPosts = posts.filter((post) =>
+        mostViewed.some((postViews) => `/blog/${postViews.name}` === post.href)
+      );
+
+      response.setPageProp("mostViewed", mostViewedPosts);
       return response;
     }
   }

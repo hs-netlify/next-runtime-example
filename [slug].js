@@ -29,22 +29,16 @@ const BlogPage = ({ post, title }) => {
   let mostViewed = JSON.parse(mostViewedCookie ? mostViewedCookie : null);
   const router = useRouter();
   const { slug } = router.query;
-  [{ name: "Somthing", value: 2 }];
-
   if (mostViewed) {
-    let currPage = mostViewed.findIndex((page) => page.name === slug);
-    console.log(currPage);
-    if (currPage !== -1) {
-      mostViewed[currPage].value += 1;
+    if (mostViewed[slug]) {
+      mostViewed[slug] += 1;
     } else {
-      mostViewed.push({ name: slug, value: 1 });
+      mostViewed[slug] = 1;
     }
   } else {
-    mostViewed = [];
-    mostViewed.push({ name: slug, value: 1 });
+    mostViewed = {};
+    mostViewed[slug] = 1;
   }
-
-  mostViewed.sort((a, b) => b.value - a.value);
   Cookies.set("mostViewed", JSON.stringify(mostViewed));
 
   return (
