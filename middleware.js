@@ -44,6 +44,14 @@ export const middleware = async (nextRequest) => {
           element.setAttribute("style", "background-color:black; color:white");
         },
       });
+      response.rewriteHTML("#hero-image", {
+        element(element) {
+          element.setAttribute(
+            "src",
+            "https://images.unsplash.com/photo-1549082984-1323b94df9a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+          );
+        },
+      });
     }
     return response;
   }
@@ -150,6 +158,34 @@ export const middleware = async (nextRequest) => {
       }
 
       return response;
+    }
+  }
+
+  //Option 1 - complete copy of pages directory into variant
+  if (pathname.startsWith("/")) {
+    //check bucket from cookie
+
+    //if cookie not assigned assign cookie
+
+    if (bucket === "a") {
+      //proxy rewrite to /a/*
+    } else if (bucket === "b") {
+      //proxy rewrite to /a/*
+    } else {
+      return;
+    }
+  }
+
+  //Option 2 defining different variant configs for each route (no replication with this option)
+  if (pathname.startsWith("/diagrams/")) {
+    //check bucket
+
+    if (bucket === "a") {
+      //proxy rewrite to /a/diagrams/*
+    } else if (bucket === "b") {
+      //proxy rewrite to /a/diagrams/*
+    } else {
+      return;
     }
   }
 };

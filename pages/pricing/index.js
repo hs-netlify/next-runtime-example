@@ -23,18 +23,32 @@ const plan3Features = [
 ];
 
 export const getStaticProps = async () => {
+  // let defaultPricing = [
+  //   {
+  //     name: "Hobby",
+  //     price: 79,
+  //   },
+  //   {
+  //     name: "Growth",
+  //     price: 149,
+  //   },
+  //   {
+  //     name: "Scale",
+  //     price: 349,
+  //   },
+  // ];
   let defaultPricing = [
     {
-      name: "Hobby",
-      price: 79,
+      name: "",
+      price: null,
     },
     {
-      name: "Growth",
-      price: 149,
+      name: "",
+      price: null,
     },
     {
-      name: "Scale",
-      price: 349,
+      name: "",
+      price: null,
     },
   ];
   return {
