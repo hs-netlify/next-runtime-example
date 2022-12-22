@@ -160,32 +160,4 @@ export const middleware = async (nextRequest) => {
       return response;
     }
   }
-
-  //Option 1 - complete copy of pages directory into variant
-  if (pathname.startsWith("/")) {
-    //check bucket from cookie
-
-    //if cookie not assigned assign cookie
-
-    if (bucket === "a") {
-      //proxy rewrite to /a/*
-    } else if (bucket === "b") {
-      //proxy rewrite to /a/*
-    } else {
-      return;
-    }
-  }
-
-  //Option 2 defining different variant configs for each route (no replication with this option)
-  if (pathname.startsWith("/diagrams/")) {
-    //check bucket
-
-    if (bucket === "a") {
-      //proxy rewrite to /a/diagrams/*
-    } else if (bucket === "b") {
-      //proxy rewrite to /a/diagrams/*
-    } else {
-      return;
-    }
-  }
 };
