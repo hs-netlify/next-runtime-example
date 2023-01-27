@@ -29,7 +29,7 @@ export default function Home() {
               </span>
               <br />
               <span className="block text-indigo-600 xl:inline">
-                Next.js Advanced Middleware
+                Next.js Advanced Middleware!
               </span>
             </h1>
             <p className="mx-auto mt-20 max-w-md text-lg sm:text-xl md:mt-5 md:max-w-3xl">
