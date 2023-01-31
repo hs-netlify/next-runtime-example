@@ -1,12 +1,12 @@
 [[redirects]]
   from='https://strong-buttercream-5b7d12.netlify.app/'
   to='https://netlify-se-demo.com/'
-  status=301
+  status=302
   force=true
 
 
 [[redirects]]
   from='https://strong-buttercream-5b7d12.netlify.app/*'
   to='https://netlify-se-demo.com/:splat'
-  status=301
+  status=302
   force=true
