@@ -3,3 +3,9 @@
   to='https://netlify-se-demo.com/:splat'
   status=301
   force=true
+
+  [[redirects]]
+  from='https://www.netlify-se-demo.com/*'
+  to='https://netlify-se-demo.com/:splat'
+  status=301
+  force=true
