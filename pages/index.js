@@ -35,7 +35,7 @@ export default function Home() {
             <p className="mx-auto mt-20 max-w-md text-lg sm:text-xl md:mt-5 md:max-w-3xl">
               <span className="font-bold ">Example 1:</span> Create a custom
               pricing page on the fly by providing a unique link to each
-              customer.
+              customer
               <br />
             </p>
             <div className="flex mt-4">
