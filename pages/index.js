@@ -16,7 +16,7 @@ export default function Home() {
         onClick={handleABSwitch}
         className="fixed text-center bottom-10 w-48 z-50 bg-indigo-600 hover:bg-indigo-700 rounded text-white  p-2 text-large cursor-pointer left-10"
       >
-        Switch A/B Test!
+        Switch A/B Test
       </a>
 
       <NavBar />
