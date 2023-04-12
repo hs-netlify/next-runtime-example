@@ -156,6 +156,7 @@ export const middleware = async (nextRequest) => {
         response.setPageProp("listTitle", title);
         response.replaceText("#list-title", title);
       }
+      console.log("This function has been called");
 
       return response;
     }
