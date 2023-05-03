@@ -1,4 +1,4 @@
 [[edge_fuctions]]
    cache="manual"
-   function="date.'
-   path='/get-date'
+   function="date"
+   path="/get-date"
