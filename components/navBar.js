@@ -28,13 +28,12 @@ export default function NavBar() {
                       alt="Your Company"
                     />
                   </Link>
-                  <Link href="/">
-                    <img
-                      className="hidden h-20 w-auto lg:block"
-                      src="/images/netlify-logo.png"
-                      alt="Your Company"
-                    />
-                  </Link>
+
+                  <img
+                    className="hidden h-20 w-auto lg:block"
+                    src="/images/netlify-logo.png"
+                    alt="Your Company"
+                  />
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
@@ -99,21 +98,24 @@ export default function NavBar() {
                       </Menu.Items>
                     </Transition>
                   </Menu>
-                  <Link href="/search">
-                    <a className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">
-                      Search
-                    </a>
+                  <Link
+                    href="/search"
+                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Search
                   </Link>
 
-                  <Link href="/blog">
-                    <a className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">
-                      Blog
-                    </a>
+                  <Link
+                    href="/blog"
+                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Blog
                   </Link>
-                  <Link href="/store">
-                    <a className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">
-                      Store
-                    </a>
+                  <Link
+                    href="/store"
+                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                  >
+                    Store
                   </Link>
                 </div>
               </div>
