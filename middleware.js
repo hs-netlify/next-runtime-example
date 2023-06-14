@@ -26,15 +26,6 @@ export const middleware = async (nextRequest) => {
     response.cookies.set(COOKIE_NAME, bucket);
   }
 
-  // const hasCookieConsent = request.cookies.get("cookieConsentGiven");
-  // if (hasCookieConsent) {
-  //   response.setPageProp("cookieConsentGiven", true);
-  //   response.rewriteHTML("#cookie-banner", {
-  //     element(e) {
-  //       e.remove();
-  //     },
-  //   });
-
   //Change background colour on homepage based of A/B
 
   if (pathname == "/") {
