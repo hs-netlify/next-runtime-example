@@ -30,6 +30,7 @@ export const middleware = async (nextRequest) => {
 
   if (pathname == "/") {
     if (bucket === "b") {
+      console.log("THis gets called right here!");
       response.rewriteHTML("#main-body", {
         element(element) {
           element.setAttribute("style", "background-color:black; color:white");
