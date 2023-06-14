@@ -1,4 +1,4 @@
-export default async (request: Request, context: Context) => {
+export default async (request, context) => {
   // look for existing "test_bucket" cookie
   const bucketName = "test_bucket";
   const bucket = context.cookies.get(bucketName);
